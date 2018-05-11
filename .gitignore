@@ -1,0 +1,14 @@
+# generated dirs
+O.*/
+bin/
+db/
+dbd/
+include/
+lib/
+
+# generated files
+envPaths
+
+# module from another git repo
+ether_ip/
+
