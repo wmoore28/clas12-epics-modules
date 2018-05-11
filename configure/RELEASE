@@ -20,7 +20,7 @@ EPICS_BASE=/usr/clas12/R3.14.12.5/base
 
 -include $(SUPPORT)/configure/RELEASE
 
-ETHER_IP=$(MODULES)/ether_ip-2-26
+ETHER_IP=$(MODULES)/ether_ip
 #MCA_S55=$(MODULES)/mca-s55
 DEVSNMP=$(MODULES)/snmp-nscl-1-0-RC9-NAB
 CAPUTLOG=$(MODULES)/caPutLog-3-4
