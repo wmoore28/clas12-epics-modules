@@ -1,0 +1,27 @@
+#FILENAME:      RELEASE
+#USAGE:         Specify directory paths to synApps support modules
+#Version:       $Revision: 19158 $
+#Modified By:   $Author: mooney $
+#Last Modified: $Date: 2015-03-19 15:44:13 -0500 (Thu, 19 Mar 2015) $
+#HeadURL:       $URL: https://subversion.xray.aps.anl.gov/synApps/configure/tags/synApps_5_8/RELEASE $
+
+#NOTES
+#     - To remove modules from the build, delete or comment out the
+#       module name.
+#     - Refer to the "MODULE_LIST" in <synApps>/configure/Makefile 
+#       for the inter-dependencies of the different modules.
+
+MODULES=/usr/clas12/R3.14.12.5/modules
+SUPPORT=/usr/clas12/R3.14.12.5/synApps_5_8
+-include $(TOP)/configure/SUPPORT.$(EPICS_HOST_ARCH)
+EPICS_BASE=/usr/clas12/R3.14.12.5/base
+-include $(TOP)/configure/EPICS_BASE 
+-include $(TOP)/configure/EPICS_BASE.$(EPICS_HOST_ARCH) 
+
+-include $(SUPPORT)/configure/RELEASE
+
+ETHER_IP=$(MODULES)/ether_ip-2-26
+#MCA_S55=$(MODULES)/mca-s55
+DEVSNMP=$(MODULES)/snmp-nscl-1-0-RC9-NAB
+CAPUTLOG=$(MODULES)/caPutLog-3-4
+S7NODAVE=$(MODULES)/s7nodave-2.0.1

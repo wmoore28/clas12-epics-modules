@@ -1,0 +1,41 @@
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
+
+SUPPORT=/usr/clas12/R3.14.12.5/synApps_5_8
+include $(SUPPORT)/configure/RELEASE
+#If using the sequencer, point SNCSEQ at its top directory:
+#SNCSEQ=$(SUPPORT)/seq-2-1-13
+
+# Transform record
+#CALC=$(SUPPORT)/calc-3-2
+# If calc was built with sscan, we must link against it
+#SSCAN=$(SUPPORT)/sscan-2-9
+
+# Busy record 
+#BUSY=$(SUPPORT)/busy-1-6
+
+# Scaler record
+#STD=$(SUPPORT)/std-3-2
+
+# save_restore
+#AUTOSAVE=$(SUPPORT)/autosave-5-1
+
+# ASYN - for device/driver support
+#ASYN=$(SUPPORT)/asyn-4-21
+
+# MCA - this module
+#MCA=$(SUPPORT)/mca-s55
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE=/usr/clas12/R3.14.12.5/base
+
+#Capfast users may need the following definitions
+#CAPFAST_TEMPLATES=
+#SCH2EDIF_PATH=

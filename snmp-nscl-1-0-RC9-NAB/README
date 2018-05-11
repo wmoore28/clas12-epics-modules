@@ -1,0 +1,11 @@
+NAB:
+
+Commented out setting of flagged_read_bad in devSnmp_oid::readReplyProcessing in snmpApp/src/devSnmp.cc
+in order to let it continue to poll hardware even after failing to find an OID in a MIB file.  If that
+flag gets set, it will never try to read that OID again.
+
+This is to deal with AKCP sensorProbe, where occaisonally net-snmp fails to find a SPAGENT-MIB variable
+in akcp.mib but successive attempts succeed.  This behavior exists with both snmpget and snmp_send, and
+even though MIB file is unchanged.  One would assume net-snmp's parsing of MIB files is deterministic,
+and then my only guess is a file system glitch where the MIB file is occasionally not read successfully.
+
